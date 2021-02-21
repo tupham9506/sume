@@ -1,0 +1,42 @@
+<v-row justify="center">
+  <v-dialog
+    v-model="isOpen"
+    persistent
+    max-width="30%"
+  >
+    <v-card>
+      <v-card-title>
+        <span class="headline">{{ $t('login.title') }}</span>
+        <v-btn text class="close-button" @click="closeDialog">x</v-btn>
+      </v-card-title>
+      <v-card-text>
+        <v-form
+          ref="form"
+          @submit.prevent="login"
+        >
+          <v-text-field
+            :label="$t('login.email')"
+            required
+          ></v-text-field>
+          <v-text-field
+            :label="$t('login.password')"
+            type="password"
+            required
+          ></v-text-field>
+          <v-row>
+            <v-col cols="12" class="d-flex justify-center">
+              <v-btn
+                type="submit"
+                class="mr-2"
+                color="primary"
+                @click="dialog = false"
+              >
+                {{ $t('login.loginButton') }}
+              </v-btn>
+            </v-col>
+          </v-row>
+        </v-form>
+      </v-card-text>
+    </v-card>
+  </v-dialog>
+</v-row>

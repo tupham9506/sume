@@ -1,0 +1,18 @@
+
+<section class="pages">
+  <v-row
+    align="center"
+    justify="center"
+  >
+    <v-btn color="primary" @click="openLoginForm">
+      {{ $t('home.loginButton') }}
+    </v-btn>
+    <v-btn color="info">
+      {{ $t('home.registerButton') }}
+    </v-btn>
+  </v-row>
+  <login
+    :isOpen.sync="isLoginFormOpen"
+  />
+</section>
+
